@@ -34,3 +34,11 @@ a = getRandomNumber(100);
 b = getRandomNumber(100);
 
 alert(isNegative(a, b));
+
+// Lesson 2.4
+
+function getRandomRange(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+a = getRandomNumber(0, 15);
