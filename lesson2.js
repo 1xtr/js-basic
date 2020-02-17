@@ -1,3 +1,4 @@
+let a = b = c = d = e = f = g = h = i = j = "";
 // Lesson 2.1
 // var a = 1, b = 1, c, d;
 // c = ++a; alert(c);           // 2 перфикс, сначала инкремент потом результат
@@ -30,10 +31,10 @@ function isNegative(num1, num2) {
     }
 }
 
-a = getRandomNumber(100);
-b = getRandomNumber(100);
-
-alert(isNegative(a, b));
+// a = getRandomNumber(100);
+// b = getRandomNumber(100);
+//
+// alert(isNegative(a, b));
 
 // Lesson 2.4
 
@@ -41,4 +42,18 @@ function getRandomRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-a = getRandomNumber(0, 15);
+a = getRandomRange(0, 15);
+switch (a) {
+    case 0:
+    console.log("0123456789101112131415");
+    break;
+    default:
+    for (i=a; i <= 15; i++) {
+        b += i + ",";
+    }
+        console.log(b);
+
+}
+
+// Lesson 2.5
+
