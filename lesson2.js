@@ -21,7 +21,7 @@ function getRandomNumber(max) {
     return Math.round(Math.random() * max);
 }
 
-function isNegative(num1, num2) {
+function compare(num1, num2) {
     if ((num1 >= 0) && (num2 >= 0)) {
         return num1 - num2;
     } else if ((num1 < 0) && (num2 < 0)) {
@@ -31,10 +31,12 @@ function isNegative(num1, num2) {
     }
 }
 
-// a = getRandomNumber(100);
-// b = getRandomNumber(100);
-//
-// alert(isNegative(a, b));
+a = getRandomRange(-100, 100);
+console.log(a);
+b = getRandomRange(-100, 100);
+console.log(b);
+console.log(compare(a, b));
+//alert(compare(a, b));
 
 // Lesson 2.4
 
@@ -42,7 +44,9 @@ function getRandomRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+a = b = "";
 a = getRandomRange(0, 15);
+console.log(a);
 switch (a) {
     case 0:
     console.log("0123456789101112131415");
@@ -57,3 +61,54 @@ switch (a) {
 
 // Lesson 2.5
 
+function multiplication(x, y) {
+    return x * y;
+}
+
+function devision(x, y) {
+    return x / y;
+}
+
+function addiction(x, y) {
+    return x + y;
+}
+
+function deduction(x, y) {
+    return x - y;
+}
+
+// Lesson 2.6
+function mathOperation(arg1, arg2, operation) {
+    switch (operation) {
+        case multiplication:
+            return multiplication(arg1, arg2);
+        case devision:
+            return devision(arg1, arg2);
+        case addiction:
+            return addiction(arg1, arg2);
+        case deduction:
+            return deduction(arg1, arg2);
+    }
+}
+
+console.log(mathOperation(15, -44, deduction));
+
+// Lesson 2.7
+//
+console.log(typeof null); // object
+console.log(typeof 0); // number
+// при сравнение будут false так как разные типы
+// при арифм. операциях null приводится к 0
+
+// Lesson 2.8
+
+function power(val, pow) {
+   if (pow === 1) {
+       return val;
+   } else {
+       return val * power(val, pow - 1);
+   }
+
+}
+
+console.log(power(4, 5));
