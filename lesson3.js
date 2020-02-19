@@ -1,11 +1,11 @@
-// // Lesson 3.1
+// Lesson 3.1
 // let result = "";
 // function simpleNumber(min, max) {
 //     let i = min;
 //     nextStep:
 //     while (i <= max) {
 //         let j = 2;
-//         while (j < i) {
+//         while (j < Math.sqrt(i)) {
 //             if (i % j === 0) continue nextStep;
 //             j++;
 //
@@ -36,10 +36,10 @@
 
 // Lesson 3.4
 
-//for (let i = 0; i <= 9;) console.log(i++);
+//for (let i = 0; i <= 9; console.log(i++));
 
 // Lesson 3.5
-//  let i = x = "";
+// let i = x = "";
 // for (let i = 0; i <= 20; i++) console.log(x += "x");
 // or
 // while (i <= 20) {
