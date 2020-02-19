@@ -1,33 +1,37 @@
 // Lesson 3.1
-// let result = "";
-// function simpleNumber(min, max) {
-//     let i = min;
-//     nextStep:
-//     while (i <= max) {
-//         let j = 2;
-//         while (j < Math.sqrt(i)) {
-//             if (i % j === 0) continue nextStep;
-//             j++;
-//
-//         }
-//         result += `${i},`;
-//         i++;
-//     }
-//     // for (let  i = min; i <= max; i++) {
-//     //     let j = 2;
-//     //     while (i % j === 0) {
-//     //         if (j < i)
-//     //     }
-//     //     for (let j = 2; j < i; j++) {
-//     //         if (i % j === 0) continue nextStep;
-//     //     }
-//     //     result += `${i},`;
-//     //     console.log(result);
-//     // }
-//
-// }
-//
-// console.log(simpleNumber(2, 10));
+let result = "";
+function simpleNumber(min, max) {
+    let i = min;
+    nextStep:
+    while (i <= max) {
+        let j = 2;
+        while (j < i) {
+            if (i % j === 0) {
+                i++;
+                continue nextStep;
+            } else {
+                j++;
+            }
+        }
+        result += `${i} `;
+        i++;
+    }
+    return result
+    // for (let  i = min; i <= max; i++) {
+    //     let j = 2;
+    //     while (i % j === 0) {
+    //         if (j < i)
+    //     }
+    //     for (let j = 2; j < i; j++) {
+    //         if (i % j === 0) continue nextStep;
+    //     }
+    //     result += `${i},`;
+    //     console.log(result);
+    // }
+
+}
+
+console.log(simpleNumber(2, 100));
 
 
 // Lesson 3.2
