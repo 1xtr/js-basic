@@ -79,32 +79,34 @@ function getRandomRange(min, max) {
 // console.log(mathOperation(15, -44, deduction));
 
 // Lesson 2.6
-let summ = getRandomRange(1, 20); // получим случайное число в диапазоне
-let summStr = String(summ); // приведем полученное число к строке
-//let lastNum = +summStr.substr(summStr.length - 1); // получим последнее число (из длины строки вычитаем 1)
-let lastNum = +summStr.slice(-2); // берем из строки 2 последних символа и унарным плюсом преобразуем к числу
-// console.log(summStr + " " + typeof summStr);
-// console.log(summStr.length);
-// console.log(lastNum + " " + typeof lastNum);
-let suffix;
-switch (lastNum) { // на основе последнего числа, выбираем правильное окончание
-    case 1:
-        suffix = " рубль";
-        break;
-    case 2:
-    case 3:
-    case 4:
-        suffix = " рубля";
-        break;
-    case 11:
-    case 12:
-    case 13:
-    case 14:
-    default:
-        suffix = " рублей";
-        break;
+let summ = getRandomRange(1000, 1020); // получим случайное число в диапазоне
+//console.log(summ);
+
+function suffix(num) {
+    let s = " рублей";
+    num = num % 100;
+    if (!(num >= 11 && num <= 14)) {
+        num = num % 10;
+        switch (num) { // на основе последнего числа, выбираем правильное окончание
+            case 1:
+                s = " рубль";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                s = " рубля";
+                break;
+            default:
+                s = " рублей";
+                break;
+        }
+    }
+    return s;
+
 }
-console.log(summ + suffix);
+
+console.log(summ + suffix(summ));
+
 
 
 // // Lesson 2.7
