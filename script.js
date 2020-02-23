@@ -1,9 +1,110 @@
-let tempC = +prompt('Insert temperature in Celsius');
-let tempF = (9/5) * tempC + 32;
-alert(tempF);
+// lesson 3.2
+// for (let i=0; i<=10; i++) {
+//     if (i === 0) {
+//         console.log(i + " - это ноль");
+//     } else if (i % 2 === 1) {
+//         console.log(i + " - нечетное число")
+//     } else {
+//         console.log(i + " - четное число")
+//     }
+// }
 
-let admin, name;
+// lesson 3.3
 
-name = 'Vasili';
-admin = name;
-alert(admin);
+// const post = {
+//     author: "John", //вывести этот текст
+//     postId: 23,
+//     comments: [
+//         {
+//             userId: 10,
+//             userName: "Alex",
+//             text: "lorem ipsum",
+//             rating: {
+//                 likes: 10,
+//                 dislikes: 2 //вывести это число
+//             }
+//         },
+//         {
+//             userId: 5, //вывести это число
+//             userName: "Jane",
+//             text: "lorem ipsum 2", //вывести этот текст
+//             rating: {
+//                 likes: 3,
+//                 dislikes: 1
+//             }
+//         },
+//     ]
+// }
+// console.log(post.author);
+// console.log(post.comments[0].rating.dislikes);
+// console.log(post.comments[1].userId);
+// console.log(post.comments[1].text);
+
+// lesson 3.4
+
+// const products = [
+//     {
+//         id: 3,
+//         price: 200,
+//     },
+//     {
+//         id: 4,
+//         price: 900,
+//     },
+//     {
+//         id: 1,
+//         price: 1000,
+//     },
+// ];
+//
+// products.forEach(function (element) {
+//     element.price *= 1.15;
+// })
+
+// lesson 3.5
+
+// const products = [
+//     {
+//         id: 3,
+//         price: 127,
+//         photos: [
+//             "1.jpg",
+//             "2.jpg",
+//         ]
+//     },
+//     {
+//         id: 5,
+//         price: 499,
+//         photos: []
+//     },
+//     {
+//         id: 10,
+//         price: 26,
+//         photos: [
+//             "3.jpg"
+//         ]
+//     },
+//     {
+//         id: 8,
+//         price: 78,
+//     },
+// ];
+// let newProd = products.filter(function (element) {
+//     if ("photos" in element) {
+//         return element.photos.length > 0;
+//     }
+// });
+// console.log(newProd.length)
+
+// lesson 3.6
+
+//for (let i = 0; i <= 9; console.log(i++));
+
+// Lesson 3.7
+// let i = x = "";
+// for (let i = 0; i <= 20; i++) console.log(x += "x");
+// or
+// while (i <= 20) {
+//     console.log(x += "x");
+//     i++;
+// }
