@@ -58,7 +58,7 @@
 // ];
 //
 // products.forEach(function (element) {
-//     element.price *= 1.15;
+//     element.price *= 0.85;
 // })
 
 // lesson 3.5
