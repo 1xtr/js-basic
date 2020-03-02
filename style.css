@@ -1,26 +1,90 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.hidden {
-    display: none;
+
+.body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lesson5-3 {
+  width: 100vw;
+  height: 30vh;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  transition: opacity 1s;
+  width: 100px;
+  height: 30px;
 }
 
 .popup {
-    margin: 0 auto;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 0 3px 5px rgba(0, 0,0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  transition: opacity 1s;
+  opacity: 1;
+  z-index: 999;
 }
 
 .close-btn {
-    position: absolute;
-    font-size: 15px;
-    font-weight: bold;
-    top: 30px;
-    right: 30px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 10px;
+  right: 10px;
 }
+.close-btn:hover, .close-btn .button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
+  z-index: -9999;
+}
+
+.lesson5-4 {
+  display: flex;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.product__img {
+  height: 150px;
+}
+.product__info {
+  position: relative;
+}
+.product__more {
+  position: absolute;
+  font-size: 14px;
+  background-color: #fff;
+  top: 0px;
+  height: 100%;
+  text-align: justify;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.product__more_active {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */
