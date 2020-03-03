@@ -80,7 +80,7 @@
   position: absolute;
   font-size: 14px;
   background-color: #fff;
-  top: 0px;
+  top: 0;
   height: 100%;
   text-align: justify;
   opacity: 0;
@@ -91,6 +91,43 @@
 }
 .product__btn:hover {
   cursor: pointer;
+}
+
+.chess-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.chess {
+  display: table;
+  border-collapse: collapse;
+  flex-direction: column;
+}
+.chess:nth-child(2n) {
+  background-color: #000;
+}
+
+.col {
+  display: table-row;
+  border-collapse: collapse;
+  font-size: 40px;
+}
+.col:nth-child(2n) .cel:nth-child(2n), .col:nth-child(2n+3) .cel:nth-child(2n+3) {
+  background-color: #000;
+  text-shadow: 0 0 5px white;
+  font-weight: bold;
+}
+
+.cel {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=style.css.map */
