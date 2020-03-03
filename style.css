@@ -25,6 +25,9 @@
   width: 100px;
   height: 30px;
 }
+.button:hover {
+  cursor: pointer;
+}
 
 .popup {
   position: absolute;
@@ -85,6 +88,9 @@
 }
 .product__more_active {
   opacity: 1;
+}
+.product__btn:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
