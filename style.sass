@@ -1,0 +1,120 @@
+@mixin flexbox
+  display: flex
+  justify-content: center
+  align-items: center
+
+*
+  margin: 0
+  padding: 0
+
+.body 
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+
+.lesson5-3 
+  width: 100vw
+  height: 30vh
+  background-color: #cccccc
+  @include flexbox
+
+.button 
+  transition: opacity 1s
+  width: 100px
+  height: 30px
+  &:hover
+    cursor: pointer
+
+
+.popup 
+  position: absolute
+  padding: 10px
+  width: 200px
+  height: 200px
+  background-color: #fff
+  box-shadow: 0 0 10px 3px rgba(0, 0,0, 0.5)
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: justify
+  transition: opacity 1s
+  opacity: 1
+  z-index: 999
+
+
+.close-btn 
+  position: absolute
+  font-size: 30px
+  font-weight: bold
+  top: 10px
+  right: 10px
+  &:hover, .button:hover
+    cursor: pointer
+
+
+.hidden 
+  opacity: 0
+  z-index: -9999
+
+.lesson5-4
+  display: flex
+
+.product
+  display: flex
+  flex-direction: column
+  margin: 10px
+  &__img
+    height: 150px
+  &__info
+    position: relative
+  &__more
+    position: absolute
+    font-size: 14px
+    background-color: #fff
+    top: 0
+    height: 100%
+    text-align: justify
+    opacity: 0
+    transition: opacity .5s
+    &_active
+      opacity: 1
+  &__btn:hover
+    cursor: pointer
+
+
+/// шахматная доска
+.chess-btn
+  @include flexbox
+  margin-top: 10px
+.chess
+  //@include flexbox
+  display: table
+  border-collapse: collapse
+  flex-direction: column
+  &:nth-child(2n)
+    background-color: #000
+
+.col
+  //@include flexbox
+  display: table-row
+  border-collapse: collapse
+  font-size: 40px
+  &:nth-child(2n) .cel:nth-child(2n), &:nth-child(2n+3) .cel:nth-child(2n+3)
+    background-color: #000
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1)
+    font-weight: bold
+
+
+.cel
+  //@include flexbox
+  display: table-cell
+  text-align: center
+  vertical-align: middle
+  width: 50px
+  height: 50px
+  //outline: 1px solid #000
+  border: 1px solid #000
+  box-sizing: border-box
