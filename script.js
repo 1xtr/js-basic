@@ -2,46 +2,79 @@
 
 window.addEventListener('load', () => {
     const slider = new Slider();
-    slider.run();
-
+    const images = slider.images;
+    slider.init(images);
+    slider.addListener();
+    setInterval(() => slider.run(), 3000);
 });
 
 class Slider {
     constructor() {
         this.images = [
-            'url("img/С172/Cessna-182-Skylane-T.jpg")',
+            'url("img/С172/с182-00.jpg")',
             'url("img/С172/с182-01.jpg")',
-            'url("img/С172/с182-02.jpg")'
+            'url("img/С172/с182-02.jpg")',
+            'url("img/С172/с182-03.jpg")'
         ];
-        this.currentImage = 0;
-        this.container = document.querySelector('.slider');
-        this.addListener = this.container.addEventListener('click', this.slideDirection);
-        this.sliderCtrl = document.querySelector('.slider__ctrl');
+        this.items = document.querySelectorAll('.slider__item');
+        this.currentSlideIndex = 0;
+        this.sliderCtrl = document.querySelectorAll('.slider__ctrl');
     }
 
-    slideDirection(event) {
-        if (event.target.classList.contains('slider__ctrl_left')) {
-            return 'left';
+    init(imgArr) {
+        this.items.forEach(function (slide, i) {
+            slide.style.backgroundImage = imgArr[i];
+            if (!(i === 0)) {
+                slide.classList.add('hidden');
+            }
+            //slide.style.zIndex = i * (-1);
+        })
+    }
+
+    hideSlide(id) {
+        this.items[id].classList.add('hidden');
+    }
+
+    changeIndex(direction = 'up') {
+        if (this.currentSlideIndex >= this.items.length - 1) {
+            this.currentSlideIndex = 0;
         } else {
-            return 'right';
-        }
+            if (direction === 'down') {
+                this.currentSlideIndex--;
+                if (this.currentSlideIndex < 0) {
+                    this.currentSlideIndex = this.items.length - 1;
+                }
+            } else {
+                this.currentSlideIndex++;
+            }
 
-    }
-    nextImage() {
-        let nexEl = this.currentImage++;
-        let imgCount = this.images.length;
-        if  (nexEl < imgCount) {
-            return nexEl;
-        } else {
-            return this.currentImage = 0;
         }
     }
 
-    ChangeCurrentImage() {
-        this.container.style.backgroundImage  = this.images[this.nextImage()];
+    removeClasses(index = this.currentSlideIndex) {
+        this.items[index].classList.remove('hidden', 'move-right', 'move-left');
     }
-    run() {
-        setInterval(this.ChangeCurrentImage.bind(this), 2000);
+
+    ChangeCurrentSlide(direction = 'move-right') {
+        let currentSlide = this.items[this.currentSlideIndex];
+        currentSlide.classList.add(direction);
     }
+
+    run(direction = 'up') {
+        //setTimeout(this.ChangeCurrentSlide.bind(this), 2000);
+        this.ChangeCurrentSlide();
+        this.changeIndex(direction);
+        this.removeClasses();
+    }
+
+    addListener() {
+        this.sliderCtrl.forEach(item => item.addEventListener('click', this.move));
+    }
+
+    move(event) {
+
+
+    }
+
 }
 

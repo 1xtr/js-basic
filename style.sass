@@ -1,0 +1,78 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.center
+  margin: 0 calc(50% - 400px)
+
+.hidden
+  visibility: hidden
+
+.slider
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 600px
+  min-width: 800px
+  &__item
+    position: absolute
+    width: 100%
+    height: 100%
+    background-image: url("img/С172/с182-00.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    overflow: hidden
+
+  &__ctrl
+    height: 100%
+    z-index: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 15px
+    opacity: .3
+
+    &:hover
+      background-color: #cccccc33
+      cursor: pointer
+      opacity: 0.9
+
+    &__img
+      width: 32px
+      filter: invert(1)
+      object-fit: cover
+
+
+.move-left
+  animation: slide-left 1s linear both
+  z-index: 1
+.move-right
+  animation: slide-right 1s linear both
+  z-index: 1
+
+@keyframes slide-left
+  0%
+    //opacity: 1
+    width: 100%
+    left: 0
+    background-position: left center
+  100%
+    //opacity: 0
+    width: 0
+    left: 0
+    background-position: left center
+
+
+@keyframes slide-right
+  0%
+    //opacity: 1
+    width: 100%
+    right: 0
+    background-position: right center
+  100%
+    //opacity: 0
+    width: 0
+    right: 0
+    background-position: right center
